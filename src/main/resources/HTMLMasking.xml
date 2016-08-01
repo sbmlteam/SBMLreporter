@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <entry key="&lt;">&lt;</entry>
+  <entry key="&gt;">&gt;</entry>
+  <entry key="&#228;">&amp;auml;</entry>
+  <!-- ä  -->
+  <entry key="&#252;">&amp;uuml;</entry>
+  <!-- ü  -->
+  <entry key="&#246;">&amp;ouml;</entry>
+  <!-- ö  -->
+  <entry key="&#196;">&amp;Auml;</entry>
+  <!-- Ä  -->
+  <entry key="&#220;">&amp;Uuml;</entry>
+  <!-- Ü  -->
+  <entry key="&#214;">&amp;Ouml;</entry>
+  <!-- Ö  -->
+  <!-- <entry key="->">&#10141;</entry></> // for changing '->' into arrow -->
+</properties>

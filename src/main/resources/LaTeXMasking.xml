@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <entry key="_">\\_</entry>
+  <entry key="&amp;">\\&amp;</entry>
+  <entry key="\n"> </entry>
+  <entry key=">">\$\>\$</entry>
+  <entry key="ä">\\"a</entry>
+  <entry key="Ä">\\"A</entry>
+  <entry key="ü">\\"u</entry>
+  <entry key="Ü">\\"U</entry>
+  <entry key="ö">\\"o</entry>
+  <entry key="Ö">\\"O</entry>
+  <!-- <entry key="->">\$\\rightarrow\$</entry></> // for changing '->' into arrow -->
+</properties>

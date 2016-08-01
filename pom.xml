@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<!--
+ * =============================================================================
+ * This file is part of SBMLreporter, a documentation tool for systems biology
+ * models. Please visit <https://github.com/sbmlteam/SBMLreporter> for the
+ * latest version of SBMLreporter and more information about this program.
+ * Copyright (C) 2016 jointly by the following organizations:
+ * 1. The University of Tuebingen, Germany
+ * 2. EMBL European Bioinformatics Institute (EBML-EBI), Hinxton, UK
+ * 3. The California Institute of Technology, Pasadena, CA, USA
+ * 4. The University of California, San Diego, La Jolla, CA, USA
+ * 5. The Babraham Institute, Cambridge, UK
+ * This library is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation. A copy of the license agreement is provided
+ * in the file named "LICENSE" included with this software distribution and also
+ * available as <https://github.com/sbmlteam/SBMLreporter/edit/master/LICENSE>.
+ * ============================================================================= 
+ -->
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sbml</groupId>
+  <artifactId>SBMLreporter</artifactId>
+  
+  <!-- Output to jar format -->
+  <packaging>jar</packaging>
+  
+  
+  <!-- =================================================================== -->
+  <!-- General project information                                         -->
+  <!-- =================================================================== -->
+  
+  <name>${project.artifactId}</name>
+  <version>0.1</version>
+  <url>https://github.com/sbmlteam/SBMLreporter/</url>
+  <inceptionYear>2016</inceptionYear>
+  <description>SBMLreporter provides a way to read the contents of XML-based SBML files. This is helpful and important for, e.g., error detection, proofreading and model communication. SBMLreporter is a new implementation of SBML2LaTeX.</description>
+  
+  <properties>
+    <jdk.version>1.8</jdk.version>
+    <maven.build.timestamp.format>yyyy</maven.build.timestamp.format>
+    <year>${maven.build.timestamp}</year><!-- This property is used for filtering the variable ${year} in some resource files -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.license.url>https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt</project.license.url>
+    <junit.version>4.11</junit.version>
+  </properties>
+  
+  <issueManagement>
+    <url>https://github.com/sbmlteam/SBMLreporter/issues/</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+  
+  <licenses>
+    <license>
+      <name>GNU Lesser General Public License 2.1</name>
+      <url>${project.license.url}</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <developers>
+    <developer>
+      <email>andreas.draeger@uni-tuebingen.de</email>
+      <name>Andreas Dräger</name>
+      <url>https://github.com/draeger/</url>
+      <id>draeger</id>
+    </developer>
+    <developer>
+      <email>alexander.seitz@uni-tuebingen.de</email>
+      <name>Alexander Seitz</name>
+      <url>http://it.inf.uni-tuebingen.de/?page_id=123</url>
+    </developer>
+    <developer>
+      <email>christoph.blessing@student.uni-tuebingen.de</email>
+      <name>Christoph Blessing</name>
+    </developer>
+    <developer>
+      <email>jennifer.boedker@student.uni-tuebingen.de</email>
+      <name>Jennifer Bödker</name>
+    </developer>
+    <developer>
+      <email>lisa.falk@student.uni-tuebingen.de</email>
+      <name>Lisa Falk</name>
+    </developer>
+    <developer>
+      <email>florian.glauner@student.uni-tuebingen.de</email>
+      <name>Florian Glauner</name>
+    </developer>
+    <developer>
+      <email>tobias.landenberger@student.uni-tuebingen.de</email>
+      <name>Tobias Landenberger</name>
+    </developer>
+    <developer>
+      <email>friederike.luedtke@student.uni-tuebingen.de</email>
+      <name>Friederike Lüdtke</name>
+    </developer>
+    <developer>
+      <email>sophia.mersmann@student.uni-tuebingen.de</email>
+      <name>Sophia Mersmann</name>
+    </developer>
+    <developer>
+      <email>tobias.nietsch@student.uni-tuebingen.de</email>
+      <name>Tobias Nietsch</name>
+    </developer>
+    <developer>
+      <email>jonas.wember@student.uni-tuebingen.de</email>
+      <name>Jonas Wember</name>
+    </developer>
+  </developers>
+  
+  <!-- =================================================================== -->
+  <!-- Repositories -->
+  <!-- =================================================================== -->
+
+  <repositories>
+    <repository>
+      <id>ebi-repo</id>
+      <name>The EBI repository</name>
+      <url>http://www.ebi.ac.uk/~maven/m2repo</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>JSBML</id>
+      <name>The JSBML repository</name>
+      <url>http://jsbml.sourceforge.net/m2repo_snapshots/</url>
+    </repository>
+    <!-- Local libraries are an in-project repository -->
+    <!-- Add the dependencies and put them in -->
+    <!-- ${project.basedir}/lib/groupId/artifactId/version/ -->
+    <repository>
+      <id>libs</id>
+      <url>file://${project.basedir}/lib</url>
+    </repository>
+  </repositories>
+  
+  <!-- =================================================================== -->
+  <!-- Dependencies                                                        -->
+  <!-- =================================================================== -->
+  
+  <dependencies>
+    
+    <!-- To update or install local non-MAVEN JAR files run the command in the comments -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.sbml.jsbml</groupId>
+      <artifactId>jsbml</artifactId>
+      <version>1.2-SNAPSHOT</version>
+    </dependency>
+     
+  </dependencies>
+  
+  <!-- =================================================================== -->
+  <!-- Building                                                            -->
+  <!-- =================================================================== -->
+  
+  <!-- To build the project run: -->
+  <!-- mvn clean compile package assembly:single -->
+  
+  <build>
+  
+    <finalName>${project.artifactId}-${project.version}</finalName>
+    
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    
+    <pluginManagement>
+      <plugins>
+      
+        <!-- Download source code in Eclipse, best practice [OPTIONAL!] -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-eclipse-plugin</artifactId>
+          <version>2.9</version>
+          <configuration>
+            <downloadSources>true</downloadSources>
+            <downloadJavadocs>false</downloadJavadocs>
+          </configuration>
+        </plugin>
+      
+        <!-- Set a JDK compiler level -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.3</version>
+          <configuration>
+            <source>${jdk.version}</source>
+            <target>${jdk.version}</target>
+          </configuration>
+        </plugin>
+        
+        <!-- Assemble executable JAR -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.6</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>org.sbml.reporter.SBMLreporter</mainClass>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
+        
+        <!-- Run tests -->
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.19.1</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.maven.surefire</groupId>
+              <artifactId>surefire-junit4</artifactId>
+              <version>2.19.1</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <systemProperties>
+              <property>
+                <name>java.util.logging.config.file</name>
+                <value>${project.basedir}/src/main/resources/logging.properties</value>
+              </property>
+            </systemProperties>
+          </configuration>
+        </plugin>
+        
+      </plugins>
+      
+    </pluginManagement>
+    
+  </build>
+  
+  <!-- =================================================================== -->
+  <!-- Building project documentation files                                -->
+  <!-- =================================================================== -->
+  
+  <!-- see https://maven.apache.org/plugins/maven-javadoc-plugin/examples/javadoc-resources.html -->
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
+        <configuration>
+          <overview>${project.basedir}/src/main/javadoc/overview.html</overview>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+</project>
