@@ -68,47 +68,85 @@
       <name>Andreas Dräger</name>
       <url>https://github.com/draeger/</url>
       <id>draeger</id>
+      <organization>University of Tuebingen</organization>
+      <timezone>Europe/Berlin</timezone>
+      <roles>
+        <role>supervisor</role>
+      </roles>
     </developer>
     <developer>
       <email>alexander.seitz@uni-tuebingen.de</email>
       <name>Alexander Seitz</name>
       <url>http://it.inf.uni-tuebingen.de/?page_id=123</url>
+      <organization>University of Tuebingen</organization>
+      <timezone>Europe/Berlin</timezone>
+      <roles>
+        <role>supervisor</role>
+      </roles>
     </developer>
     <developer>
       <email>christoph.blessing@student.uni-tuebingen.de</email>
       <name>Christoph Blessing</name>
+      <roles>
+        <role>developer</role>
+      </roles>
     </developer>
     <developer>
       <email>jennifer.boedker@student.uni-tuebingen.de</email>
       <name>Jennifer Bödker</name>
+      <url>https://github.com/jenniferboedker/</url>
+      <roles>
+        <role>developer</role>
+      </roles>
     </developer>
     <developer>
       <email>lisa.falk@student.uni-tuebingen.de</email>
       <name>Lisa Falk</name>
+      <roles>
+        <role>developer</role>
+      </roles>
     </developer>
     <developer>
       <email>florian.glauner@student.uni-tuebingen.de</email>
       <name>Florian Glauner</name>
+      <roles>
+        <role>developer</role>
+      </roles>
     </developer>
     <developer>
       <email>tobias.landenberger@student.uni-tuebingen.de</email>
       <name>Tobias Landenberger</name>
+      <roles>
+        <role>developer</role>
+      </roles>
     </developer>
     <developer>
       <email>friederike.luedtke@student.uni-tuebingen.de</email>
       <name>Friederike Lüdtke</name>
+      <roles>
+        <role>developer</role>
+      </roles>
     </developer>
     <developer>
       <email>sophia.mersmann@student.uni-tuebingen.de</email>
       <name>Sophia Mersmann</name>
+      <roles>
+        <role>developer</role>
+      </roles>
     </developer>
     <developer>
       <email>tobias.nietsch@student.uni-tuebingen.de</email>
       <name>Tobias Nietsch</name>
+      <roles>
+        <role>developer</role>
+      </roles>
     </developer>
     <developer>
       <email>jonas.wember@student.uni-tuebingen.de</email>
       <name>Jonas Wember</name>
+      <roles>
+        <role>developer</role>
+      </roles>
     </developer>
   </developers>
   
