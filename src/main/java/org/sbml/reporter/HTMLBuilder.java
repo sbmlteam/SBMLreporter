@@ -220,20 +220,27 @@ public class HTMLBuilder extends AbstractBuilder {
    */
   private static String setGlossary(Preprocessor preprocessor) {
     StringBuilder sb = new StringBuilder();
-    sb.append(htmlTranslator.createHeading("Glossary", 1, idGlossary));
-    for (Term sboTerm : preprocessor.getSboTerms()) {
-      StringBuilder id = new StringBuilder();
-      id.append("id=\"");
-      id.append(sboTerm.getId());
-      id.append("\"");
-      StringBuilder content = new StringBuilder();
-      content.append(sboTerm.toString());
-      content.append(". ");
-      content.append(sboTerm.getName());
-      content.append(". ");
-      content.append(sboTerm.getDefinition());
-      sb.append(HTMLTranslator.command("p", content.toString(), id.toString()));
-    }
-    return sb.toString();
+	  if(preprocessor.getSboTerms().size()>0)
+	  {
+
+
+		  sb.append(htmlTranslator.createHeading("Glossary", 1, idGlossary));
+		  for (Term sboTerm : preprocessor.getSboTerms()) {
+			  StringBuilder id = new StringBuilder();
+			  id.append("id=\"");
+			  id.append(sboTerm.getId());
+			  id.append("\"");
+			  StringBuilder content = new StringBuilder();
+			  content.append(sboTerm.toString());
+			  content.append(". ");
+			  content.append(sboTerm.getName());
+			  content.append(". ");
+			  content.append(sboTerm.getDefinition());
+			  sb.append(HTMLTranslator.command("p", content.toString(), id.toString()));
+		  }
+	  }
+
+	  return sb.toString();
   }
+}
 }
