@@ -18,15 +18,14 @@
  */
 package org.sbml.reporter;
 
-import org.sbml.jsbml.Compartment;
-import org.sbml.jsbml.SBMLDocument;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.concurrent.Callable;
+
+import org.sbml.jsbml.Compartment;
+import org.sbml.jsbml.SBMLDocument;
 
 /**
  * This class creates a report file from given preprocessed SBML document data
@@ -68,14 +67,11 @@ public class ReportDirector implements Callable<Path> {
    * @throws IOException
    */
   public void createReport(SBMLDocument sbmlDocument) throws IOException {
-    // TODO somehow the report must be written to a file...?
-    // TODO check if the sbml file is empty
-    // TODO check if content to write is really in the file with if clauses
-    BufferedReader br = new BufferedReader(new FileReader(sbml));
-    if (br.readLine()) == null ) 
-    {
-    System.out.println("No errors, and file empty");
+    
+    if (sbmlDocument == null) {
+      throw new IllegalArgumentException("The SBML document must not be null.");
     }
+    
     Preprocessor preprocessedSBMLdata = new Preprocessor(sbmlDocument);
     BufferedWriter bw = new BufferedWriter(new FileWriter(file.toFile()));
     bw.write(
